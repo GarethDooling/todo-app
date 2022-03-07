@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% block todo %}
+    <h3>All Teams:</h3>
+    <p>
+    {% for team in teams %}
+        Name: {{ team.name }} <br>
+        <span><a href="{{ url_for('update', name=team.name) }}">Update</a></span>
+        <span><a href="{{ url_for('delete', name=team.name) }}">Delete</a></span>         
+        <br>
+        <br>
+    {% endfor %}
+    </p>
+{% endblock todo %}
